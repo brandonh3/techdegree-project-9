@@ -29,7 +29,7 @@ const sass = '<svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" width="
 const projects = [
     {
         title: "App Dashboard",
-        img: "../images/project-1.png",
+        img: "./images/project-1.png",
         about: "An interactive dashboard for MyApp users to view their recent activity, notifications and social interactions.",
         skills: [
             html5,
@@ -42,7 +42,7 @@ const projects = [
     },
     {
         title: "Employee Directory",
-        img: "../images/project-2.png",
+        img: "./images/project-2.png",
         about: "An interactive employee directory that pulls  employee images & information using a random user API. Clicking a user's image displays a modal with even more information on that employee. Navigation arrows allow scrolling endlessly through all employees within the directory. A search function allows filering of employees based on their name.",
         skills: [
             html5,
@@ -55,7 +55,7 @@ const projects = [
     },
     {
         title: "Photo Gallery",
-        img: "../images/project-3.png",
+        img: "./images/project-3.png",
         about: "An interactive photo gallery of various landscapes. Clicking an image displays a modal with the ability to scroll through all images within the gallery. A search function allows filering of images based on keywords. A persistent toggle allows for switching between light & dark modes.",
         skills: [
             html5,
@@ -63,12 +63,12 @@ const projects = [
             javascript,
             sass
         ],
-        link: "../projects/project-3/index.html",
+        link: "./projects/project-3/index.html",
         files: "https://github.com/brandonh3/techdegree-project-5"
     },
     {
         title: "Newsletter Signup Form",
-        img: "../images/project-4.png",
+        img: "./images/project-4.png",
         about: "A clean, simple signup form for a tech website. Includes form fields for the user's information and which newsletters they would like to sign up for.",
         skills: [
             html5,
@@ -79,7 +79,7 @@ const projects = [
     },
     {
         title: "Wheel of Success Game",
-        img: "../images/project-5.png",
+        img: "./images/project-5.png",
         about: "An interactive phrase-guessing game where the user selects one letter at a time to fill in blanks on the current phrase. The user is allowed 5 incorrect guesses. Once this limit is reached, or once the phrase is solved, the game ends.",
         skills: [
             html5,
