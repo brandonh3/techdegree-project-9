@@ -1,0 +1,27 @@
+// ===============================
+//           Variables
+// ===============================
+
+// Font Families
+
+$font-family-primary: 'Anton', sans-serif;
+$font-family-secondary: 'Open Sans', sans-serif;
+
+// Colors
+
+$white: #fff;
+$dark: #363636;
+$light: #F5F5F5;
+$primary-color: #00D1B2;
+$success: #419a53;
+$error: #b22734;
+
+// Layout
+
+$max-width: 1400px;
+
+$breakpoints: ('sm': 320px,
+    'sm-med': 480px,
+    'med': 768px,
+    'lg': 1024px,
+    'xl': 1440px);

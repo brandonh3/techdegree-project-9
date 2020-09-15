@@ -1,0 +1,52 @@
+// ==========================================
+//          Image Styles
+// ==========================================
+
+img {
+    max-width: 100%;
+}
+
+.menu-btn {
+    color: $white;
+    font-size: 2.2em;
+    margin-left: 10px;
+
+    @include mq('med') {
+        display: none;
+    }
+}
+
+.profile-img,
+.member-img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.member-img {
+    margin: 10px 10px 10px 0;
+}
+
+.profile-img {
+    margin: 0 10px;
+    margin-right: 0;
+    margin-top: 20px;
+
+    @include mq('med') {
+        margin-right: 10px;
+    }
+}
+
+.header-notif {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    margin-top: 5px;
+    margin-right: 0;
+    &:hover {
+        cursor: pointer;
+    }
+
+    @include mq('med') {
+        margin-right: 10px;
+    }
+}

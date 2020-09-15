@@ -1,0 +1,165 @@
+// ===============================
+//          Containers
+// ===============================
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    padding-top: 5vh;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#wrapper {
+    flex: 1;
+}
+
+.profile {
+    border-radius: 50%;
+    height: 9rem;
+    width: 9rem;
+    margin: 0 auto;
+    transition: all 0.75s ease-in-out;
+    border: 3px solid $primary-color;
+
+    &:hover {
+        transform: scale(1.2) rotate(-20deg);
+    }
+}
+
+.hello {
+    padding: 2rem 0;
+}
+
+.subtitle {
+    line-height: 1.2rem;
+}
+
+.field {
+    width: 80%;
+    margin: 0 auto;
+
+    & input, textarea {
+        border: 3px solid $light;
+        background: $dark;
+        border-radius: 5px;
+        padding: 0 2rem;
+        width: 100%;
+        transition: all 0.75s ease-in-out;
+    }
+
+    & input {
+        height: 4rem;
+
+        &:focus,
+        &:hover {
+            outline: none;
+            border: 3px solid $primary-color;
+        }
+    }
+
+    & textarea {
+        resize: none;
+        height: 8rem;
+        padding-top: 1.2rem;
+        padding-left: 1.8rem;
+
+        &:focus, &:hover {
+            outline: none;
+            border: 3px solid $primary-color;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+
+    & a {
+        color: $primary-color;
+    }
+}
+
+.modal-background {
+    background-color: $dark;
+    opacity: 0.99;
+}
+
+.custom-icon {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    margin: 0 10px;
+}
+
+.social svg {
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+        border-radius: 50%;
+        border: 3px solid $primary-color;
+    }
+}
+
+.current-project {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & h1 {
+        margin: 0;
+    }
+}
+
+.project {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+.skills-list {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    color: $dark;
+
+    & p {
+        padding-top: 0.4rem;
+        padding-right: 20px;
+        color: $light;
+        font-size: 1.5rem;
+    }
+}
+
+.project-img {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,45 @@
+// ==========================================
+//          Typography Styles
+// ==========================================
+
+* {
+    font-family: $font-stack-primary;
+    color: $dark-grey;;
+}
+
+.header-title-1,
+.header-title-2,
+sup,
+.profile-name,
+.alert,
+.button {
+    color: $white;
+}
+
+.header-title-2,
+sup,
+.profile-name {
+    font-weight: lighter;
+}
+
+sup {
+    font-size: 0.4em;
+}
+
+.profile-name {
+    font-size: 0.7em;
+    padding-top: 22px;
+    margin-right: 10px;
+}
+
+.social-card-title {
+    color: $purple-main;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+.social-card-number {
+    font-weight: lighter;
+    font-size: 2em;
+    margin: 0;
+}

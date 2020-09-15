@@ -1,0 +1,26 @@
+// ==========================================
+//          Typography Styles
+// ==========================================
+
+* {
+    font-family: $font-stack-primary;
+    color: $darker-grey;
+    ;
+}
+
+h1 {
+    font-family: $font-stack-secondary;
+    font-weight: lighter;
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 0;
+
+    @include mq('sm-med') {
+        font-size: 3em;
+    }
+
+    @include mq('med') {
+        margin-top: 20px;
+    }
+}
+

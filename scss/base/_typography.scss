@@ -1,0 +1,93 @@
+// ===============================
+//          Typography
+// ===============================
+
+body {
+    font-family: $font-family-primary;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $light;
+    -webkit-box-shadow: 0 0 0px 1000px $dark inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.info {
+    font-size: 1.2rem;
+}
+
+.container p {
+    font-family: $font-family-secondary;
+}
+
+input, textarea {
+    font-family: $font-family-secondary;
+    color: $light;
+    font-size: 1.2rem;
+}
+
+::placeholder,
+.message::placeholder
+ {
+    font-family: $font-family-secondary;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#about-info {
+    margin-bottom: 10px;
+    padding: 20px;
+
+    & h1, p {
+        color: $light;
+    }
+
+    & p {
+        font-family: $font-family-secondary;
+        line-height: 2rem;
+    }
+}
+
+.project-info {
+    font-family: $font-family-secondary;
+    color: $light;
+    padding: 0 1.2rem;
+}
+
+.project-title {
+    font-family: $font-family-primary;
+    text-transform: lowercase;
+    color: $light;
+    font-size: 2rem;
+    padding-top: 10px;
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+
+    & a {
+        color: $primary-color;
+        font-size: 1.5rem;
+        padding: 0 10px;
+        padding-top: 10px;
+        transition: all 0.75s ease-in-out;
+
+        &:hover {
+            color: $light;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// ======================================
+//  Mixins
+// ======================================
+
+@mixin center {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// Media queries
+@mixin mq($break) {
+		$value: map-get($breakpoints, $break);
+		$sm: map-get($breakpoints, 'sm');
+
+		@if $value == null {
+			@warn "#{$break} is not a valid breakpoint name.";
+		}
+		@else {
+			@media(min-width: $value) {
+				@content;
+			}
+		}
+}

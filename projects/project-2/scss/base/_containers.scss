@@ -1,0 +1,71 @@
+// ==========================================
+//          Container Styles
+// ==========================================
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mq('med') {
+        flex-direction: row;
+        justify-content: space-around;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+#search {
+    width: 80%;
+    height: 15px;
+    border: 4px solid $dark-grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto;
+    color: $dark-grey;
+    outline: none;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+
+    &::placeholder {
+        color: $medium-grey;
+        text-align: center;
+    }
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        border: 4px solid $accent;
+        transform: scale(1.05);
+        -webkit-box-shadow: 3px 3px 5px 6px $shadow;
+        -moz-box-shadow: 3px 3px 5px 6px $shadow;
+        box-shadow: 3px 3px 5px 6px $shadow;
+    }
+
+    @include mq('med') {
+        width: 320px;
+        align-self: center;
+        margin-right: 0;
+    }
+}
+
+body {
+    padding: 20px;
+    padding-bottom: 30px;
+    background: $light-grey;
+
+    @include mq('xl') {
+        width: 80%;
+        padding: 20px 10%;
+    }
+}
+
+.employee-cards {
+
+    @include mq('med') {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}

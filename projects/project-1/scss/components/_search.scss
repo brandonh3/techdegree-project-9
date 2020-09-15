@@ -1,0 +1,46 @@
+// ==========================================
+//          Search Styles
+// ==========================================
+
+.search-top-container {
+    display: flex;
+    justify-content: space-between;
+    background: $white;
+    border: 2px solid $medium-grey;
+    border-radius: 5px;
+    height: 42px;
+    width: 210px;
+    color: $dark-grey;
+    margin-right: 20px;
+    margin-left: -7px;
+
+    & ::placeholder {
+        color: $medium-grey;
+        opacity: 1;
+    }
+
+    @include mq('sm') {
+        width: 95%;
+        max-width: 350px;
+        margin-right: 2px;
+    }
+
+    @include mq('med') {
+        width: 400px;
+        margin-right: 10px;
+    }
+}
+
+.search-top-input {
+    border: none;
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    padding: 0 10px;
+}
+
+.search-icon {
+    font-size: 1.5em;
+    padding-top: 7px;
+    padding-right: 10px;
+}

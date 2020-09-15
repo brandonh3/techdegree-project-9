@@ -1,0 +1,95 @@
+// ==========================================
+//          Card Styles
+// ==========================================
+
+.card {
+    display: flex;
+    border: 4px solid $dark-grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+    background: $white;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        border: 4px solid $accent;
+        -webkit-box-shadow: 3px 3px 5px 6px $shadow;
+        -moz-box-shadow: 3px 3px 5px 6px $shadow;
+        box-shadow: 3px 3px 5px 6px $shadow;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 65%;
+        line-height: 0;
+    }
+
+    @include mq('med') {
+        width: 45%;
+    }
+
+    @include mq('lg') {
+        width: 29%;
+    }
+}
+
+.card-img,
+.modal-img {
+    display: flex;
+    align-items: center;
+    width: 35%;
+
+    & img {
+    width: 100%;
+    border-radius: 50%;
+    }
+
+    @include mq('sm-med') {
+        padding: 20px;
+    }
+
+    @include mq('med') {
+        padding: 10px
+    }
+}
+
+.card-info {
+    padding-left: 10px;
+
+    & h3 {
+        color: $darker-grey;
+        font-size: 0.9em;
+
+        @include mq('sm-med') {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        @include mq('med') {
+            font-size: 1.1em;
+        }
+    }
+
+    & p {
+        color: $dark-grey;
+        font-size: 0.65em;
+        padding: 0;
+        margin-bottom: 5px;
+
+        @include mq('sm-med') {
+            font-size: 0.9em;
+        }
+    }
+
+    @include mq('sm-med') {
+        padding-left: 0;
+    }
+
+    @include mq('med') {
+        font-size: 0.8em;
+    }
+}

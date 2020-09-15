@@ -1,0 +1,99 @@
+// ==========================================
+//          Alert Styles
+// ==========================================
+
+.alert-main {
+    width: 95%;
+    margin: 10px auto;
+    margin-bottom: 0;
+}
+
+.alert-card {
+    display: flex;
+    background: $purple-main;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+.alert-title {
+    flex-basis: 8%;
+    text-align: left;
+    font-size: 0.8em;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin: auto 5px;
+
+    @include mq('lg') {
+        font-size: 1em;
+        flex-basis: 6%;
+    }
+}
+
+.alert-text {
+    flex-basis: 87%;
+    text-align: left;
+    font-size: 0.7em;
+    margin: auto 5px;
+    font-weight: lighter;
+
+    @include mq('lg') {
+        font-size: 0.9em;
+        flex-basis: 89%;
+    }
+}
+
+.alert-title,
+.alert-text,
+.alert-close-btn {
+    color: $white;
+}
+
+.alert-close-btn {
+    flex-basis: 5%;
+    text-align: center;
+    margin: auto 0;
+    font-size: 1.2em;
+    font-weight: bolder;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @include mq('lg') {
+        font-size: 1.4em;
+        text-align: right;
+    }
+}
+
+
+.alert {
+
+    & p {
+        width: 120px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        color: $white;
+        font-size: 0.8em;
+        margin-left: 20px;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+}
+
+.success {
+    background: $success;
+}
+
+.error {
+    background: $error;
+}
+
+.message-sent,
+.message-fail,
+.settings-alert-msg,
+.settings-reset-msg {
+    display: none;
+}
+
+

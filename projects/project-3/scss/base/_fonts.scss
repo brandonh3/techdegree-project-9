@@ -1,0 +1,20 @@
+// ======================================
+//  Tyography Styles
+// ======================================
+
+// Universal Styles
+ body {
+     font-family: $font-stack-primary;
+     color: $light-grey;
+ }
+
+// Element Styles
+ .gal p {
+     font-size: 14px;
+     font-weight: 400;
+ }
+
+ .search-input {
+     font-size: 18px;
+    font-weight: 900;
+ }

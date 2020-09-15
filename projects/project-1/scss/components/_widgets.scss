@@ -1,0 +1,100 @@
+// ==========================================
+//          Widget Styles
+// ==========================================
+
+.widget-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.widget-whole {
+    margin-top: 0;
+}
+
+.widget-title {
+    margin-left: 10px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.social .widget-title {
+    margin-bottom: 10px;
+}
+
+.widget {
+    border-bottom: 1px solid $medium-grey;
+    max-width: 100%;
+
+    @include mq('med') {
+        padding: 0 15px;
+    }
+}
+
+.message-user {
+    @include mq('med') {
+        border-bottom: none;
+    }
+}
+
+.settings {
+    border-bottom: none;
+}
+
+.widget-half-1,
+.widget-half-2 {
+    @include mq('med') {
+        width: 50%;
+    }
+}
+
+.widget-half-2 {
+    @include mq('med') {
+        border-left: 1px solid $medium-grey;
+    }
+}
+
+.social {
+    padding-bottom: 20px;
+} 
+
+.widget-container-social {
+    display: flex;
+    flex-direction: column;
+
+    @include mq('med') {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.social-card {
+    display: flex;
+    border: 1px solid $medium-grey;
+    border-radius: 5px;
+    background: $light-grey;
+    margin: 5px 10px;
+
+    @include mq('med') {
+        width: 33%;
+    }
+}
+
+.social-svg-container {
+    width: 65px;
+    height: 65px;
+    background: $purple-main;
+    border-radius: 50%;
+    text-align: center;
+    padding: 16px;
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.social-svg-icon {
+    width: 100%;
+}
+
+.social-svg-icon-path {
+    fill: $white;
+}
