@@ -3,12 +3,9 @@
 // ===============================
 
 const nav = document.querySelector('.nav');
-const recentProjects = document.getElementById('recent-projects');
 const projectsH1 = document.querySelector('.projects-h1');
 const resume = document.getElementById('resume');
-const aboutInfo = document.getElementById('about-info');
 const showProject = document.getElementById('show-project');
-const projectBtns = document.querySelector('.project-btns');
 let index;
 
 
@@ -92,14 +89,14 @@ const projects = [
         link: "../projects/project-5/index.html",
         files: "https://github.com/brandonh3/techdegree-project-6"
     }
-]
+];
 
 // ===============================
 //     Validate Email Address
 // ===============================
 
 function emailIsValid(email) {
-    return /\S+@\S+\.\S+/.test(email)
+    return /\S+@\S+\.\S+/.test(email);
 }
 
 
@@ -185,7 +182,7 @@ if (submitBtn) {
             }
         }
     });
-};
+}
 
 if (clearBtn) {
     clearBtn.addEventListener('click', () => {
@@ -200,7 +197,7 @@ if (clearBtn) {
         chat.innerText = "let's chat.";
         submitBtn.disabled = false;
     });
-};
+}
 
 // ===============================
 //       Site Navigation
@@ -253,7 +250,7 @@ if (showProject) {
             }
         }
     });
-};
+}
 
 // ===============================
 //  Opens resume.pdf in a new tab
