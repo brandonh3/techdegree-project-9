@@ -11,6 +11,10 @@
     font-family: $font-family-primary;
     border: 3px solid $primary-color;
     transition: all 0.75s ease-in-out;
+
+    &.is-fullwidth {
+        display: block;
+    }
 }
 
 .nav {
@@ -41,8 +45,7 @@
 .project-btns {
     display: flex;
     justify-content: space-between;
-    padding: 0 2rem;
-    padding-top: 1rem;
+    margin: 0 2rem;
 
     & span {
         font-size: 2rem;

@@ -119,7 +119,7 @@ function displayProject(index) {
                     <h1 class="title has-text-primary">
                         recent projects.
                     </h1>
-                    <section class="section project modal-content is-clipped">
+                    <section class="section project modal-content">
                         <p class="subtitle is-light project-title has-text-centered">
                             ${projects[index].title}
                         </p>

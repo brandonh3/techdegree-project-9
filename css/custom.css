@@ -10,6 +10,11 @@
   transition: all 0.75s ease-in-out;
 }
 
+.buttons button.is-fullwidth,
+.project-btns button.is-fullwidth {
+  display: block;
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,8 +55,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 2rem;
-  padding-top: 1rem;
+  margin: 0 2rem;
 }
 
 .project-btns span {
@@ -188,6 +192,17 @@ h1 {
   opacity: 0.99;
 }
 
+.modal-content {
+  height: 100%;
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    padding: 3rem 0;
+  }
+}
+
 .custom-icon {
   border-radius: 50%;
   width: 65px;
@@ -206,7 +221,6 @@ h1 {
 }
 
 .current-project {
-  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,6 +231,8 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 2rem 0;
+  height: 100%;
 }
 
 .current-project h1 {
@@ -696,7 +712,7 @@ input, textarea {
   text-transform: lowercase;
   color: #F5F5F5;
   font-size: 2rem;
-  padding-top: 10px;
+  padding-top: 1rem;
 }
 
 .project-links {
