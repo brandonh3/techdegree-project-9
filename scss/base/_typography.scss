@@ -67,6 +67,9 @@ input, textarea {
 }
 
 .project-title {
+    display: flex;
+    justify-content: center;
+    line-height: 2.2rem;
     font-family: $font-family-primary;
     text-transform: lowercase;
     color: $light;

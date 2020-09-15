@@ -146,6 +146,13 @@ h1 {
     margin: 0;
 }
 
+.title-btns {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
 .skills-list {
     margin-top: 1rem;
     display: flex;
@@ -153,15 +160,21 @@ h1 {
     color: $dark;
 
     & p {
-        padding-top: 0.4rem;
+        padding-top: 0.6rem;
         padding-right: 20px;
         color: $light;
-        font-size: 1.5rem;
+        font-size: 1rem;
+
+        @include mq('sm-med') {
+            padding-top: 0.4rem;
+            font-size: 1.5rem;
+        }
     }
 }
 
 .project-img {
-    width: 80%;
+    width: 100%;
+    max-width: 700px;
     margin: 0 auto;
     margin-bottom: 10px;
     border-radius: 5px;

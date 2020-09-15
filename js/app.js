@@ -4,11 +4,12 @@
 
 const nav = document.querySelector('.nav');
 const recentProjects = document.getElementById('recent-projects');
+const projectsH1 = document.querySelector('.projects-h1');
 const resume = document.getElementById('resume');
 const aboutInfo = document.getElementById('about-info');
 const showProject = document.getElementById('show-project');
 const projectBtns = document.querySelector('.project-btns');
-let index = 0;
+let index;
 
 
 // ===============================
@@ -112,6 +113,14 @@ function displayProject(index) {
             ${projects[index].title}
         </p>
         <image class="project-img" src="${projects[index].img}" alt="project preview"></image>
+        <div class="buttons is-grouped project-btns">
+            <button class="button is-primary is-rounded is-outlined" id="left" >
+                <span class="back" id="back">&lt;</span>
+            </button>
+            <button class="button is-primary is-rounded is-outlined" id="right">
+                <span class="forward" id="forward">&gt;</span>
+            </button>
+        </div>
         <p class="is-light has-text-centered project-info">
             ${projects[index].about}
         </p>
@@ -122,14 +131,6 @@ function displayProject(index) {
         <div class="project-links has-text-centered">
             <a href="${projects[index].link}" target=”_blank”>visit site</a>
             <a href="${projects[index].files}" target=”_blank”>source code</a>
-        </div>
-        <div class="buttons is-grouped project-btns">
-            <button class="button is-primary is-rounded is-outlined" id="left">
-                <span class="back" id="back">&lt;</span>
-            </button>
-            <button button class = "button is-primary is-rounded is-outlined" id="right">
-                <span class="forward" id="forward">&gt;</span>
-            </button>
         </div>          
     `;
 }
@@ -202,56 +203,32 @@ if (clearBtn) {
 };
 
 
+if (projectsH1) {
+    index = 0;
+    displayProject(index);
+}
 
-nav.addEventListener('click', (event) => {
-    if(event.target.id == 'recent-projects') {
-        document.location.href = 'projects.html';
-        index = 0;
-        showProject.innerHTML = `
-        <p class="subtitle is-light project-title has-text-centered">
-            ${projects[index].title}
-        </p>
-        <image class="project-img" src="${projects[index].img}" alt="project preview"></image>
-        <p class="is-light has-text-centered project-info">
-            ${projects[index].about}
-        </p>
-        <div class="skills-list">
-            <p>skills used: </p>
-            ${projects[index].skills}
-        </div>
-        <div class="project-links has-text-centered">
-            <a href="${projects[index].link}" target=”_blank”>visit site</a>
-            <a href="${projects[index].files}" target=”_blank”>source code</a>
-        </div>
-        <div class="buttons is-grouped project-btns">
-            <button class="button is-primary is-rounded is-outlined" id="left">
-                <span class="back" id="back">&lt;</span>
-            </button>
-            <button button class = "button is-primary is-rounded is-outlined" id="right">
-                <span class="forward" id="forward">&gt;</span>
-            </button>
-        </div>          
-    `;
-    }
-
-// if (event.target.id === 'left' || event.target.id === 'back') {
-//     if (index !== 0) {
-//         index--;
-//         displayProject(index);
-//     } else {
-//         index = projects.length - 1;
-//         displayProject(index);
-//     }
-// } else if (event.target.id === 'right' || event.target.id === 'forward') {
-//     if (index !== projects.length - 1) {
-//         index++;
-//         displayProject(index);
-//     } else {
-//         index = 0;
-//         displayProject(index);
-//     }
-// }
-});
+if(showProject) {
+    showProject.addEventListener('click', (event) => {
+        if (event.target.id === 'left' || event.target.id === 'back') {
+            if (index !== 0) {
+                index--;
+                displayProject(index);
+            } else {
+                index = projects.length - 1;
+                displayProject(index);
+            }
+        } else if (event.target.id === 'right' || event.target.id === 'forward') {
+            if (index !== projects.length - 1) {
+                index++;
+                displayProject(index);
+            } else {
+                index = 0;
+                displayProject(index);
+            }
+        }
+    });
+};
 
 resume.addEventListener('click', () => {
     window.open('../images/resume.pdf');
