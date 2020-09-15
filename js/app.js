@@ -3,17 +3,12 @@
 // ===============================
 
 const nav = document.querySelector('.nav');
-const sayHello = document.getElementById('say-hello');
-const aboutMe = document.getElementById('about-me');
 const recentProjects = document.getElementById('recent-projects');
 const resume = document.getElementById('resume');
 const aboutInfo = document.getElementById('about-info');
-const modal = document.querySelector('.modal');
-const modalContent = document.querySelector('.modal-content');
-const modalClose = document.querySelector('.modal-close');
+const showProject = document.getElementById('show-project');
 const projectBtns = document.querySelector('.project-btns');
 let index = 0;
-
 
 
 // ===============================
@@ -112,208 +107,150 @@ function emailIsValid(email) {
 // ===============================
 
 function displayProject(index) {
-    modalContent.innerHTML = `
-        <div class="columns" id="recent-project">
-            <div class="column">
-                <div class="modal-card current-project">
-                    <h1 class="title has-text-primary">
-                        recent projects.
-                    </h1>
-                    <section class="section project modal-content">
-                        <p class="subtitle is-light project-title has-text-centered">
-                            ${projects[index].title}
-                        </p>
-                        <image class="project-img" src="${projects[index].img}" alt="project preview"></image>
-                        <p class="is-light has-text-centered project-info">
-                            ${projects[index].about}
-                        </p>
-                        <div class="skills-list">
-                            <p>skills used: </p>
-                            ${projects[index].skills}
-                        </div>
-                        <div class="project-links has-text-centered">
-                            <a href="${projects[index].link}" target=”_blank”>visit site</a>
-                            <a href="${projects[index].files}" target=”_blank”>source code</a>
-                        </div>
-                        <div class="buttons is-grouped project-btns">
-                            <button class="button is-primary is-rounded is-outlined" id="left">
-                                <span class="back" id="back">&lt;</span>
-                            </button>
-                            <button button class = "button is-primary is-rounded is-outlined" id="right">
-                                <span class="forward" id="forward">&gt;</span>
-                            </button>
-                        </div>
-                    </section>   
-                </div>
-            </div>
+    showProject.innerHTML = `
+        <p class="subtitle is-light project-title has-text-centered">
+            ${projects[index].title}
+        </p>
+        <image class="project-img" src="${projects[index].img}" alt="project preview"></image>
+        <p class="is-light has-text-centered project-info">
+            ${projects[index].about}
+        </p>
+        <div class="skills-list">
+            <p>skills used: </p>
+            ${projects[index].skills}
         </div>
+        <div class="project-links has-text-centered">
+            <a href="${projects[index].link}" target=”_blank”>visit site</a>
+            <a href="${projects[index].files}" target=”_blank”>source code</a>
+        </div>
+        <div class="buttons is-grouped project-btns">
+            <button class="button is-primary is-rounded is-outlined" id="left">
+                <span class="back" id="back">&lt;</span>
+            </button>
+            <button button class = "button is-primary is-rounded is-outlined" id="right">
+                <span class="forward" id="forward">&gt;</span>
+            </button>
+        </div>          
     `;
 }
 
-
 // ===============================
-//        Nav Listeners
+//    Contact Form Validation
 // ===============================
 
-nav.addEventListener('click', (event) => {
-    if (event.target.id !== '' && event.target.id !== 'resume') {
-        if(event.target.id === 'say-hello') {
-            modalContent.innerHTML = `
-                <div class="columns" id="hello-form">
-                    <div class="column">
+const submitBtn = document.getElementById('submit-btn');
+const clearBtn = document.getElementById('clear-btn');
+const formField = document.querySelectorAll('.form-field');
+const email = document.getElementById('email');
+const chat = document.querySelector('.chat');
 
-                        <h1 class="title has-text-primary chat">
-                            let's chat.
-                        </h1>
-                    
-                        <div class="field">
-                            <div class="control">
-                                <input class="form-field" type="text" id="name" placeholder="your name">
-                            </div>
-                        </div>
-                    
-                        <div class="field">
-                            <div class="control">
-                                <input class="form-field" type="email" id="email" placeholder="your email">
-                            </div>
-                        </div>
-                    
-                        <div class="field">
-                            <div class="control">
-                                <textarea class="form-field" type="text" id="message" placeholder="how can I help?"></textarea>
-                            </div>
-                        </div>
-                    
-                        <div class="field buttons is-grouped submit">
-                            <div class="control">
-                                <button type="submit" class="button is-primary is-rounded is-outlined" id="submit-btn">submit</button>
-                            </div>
-                            <div class="control">
-                                <button class="button is-dark is-rounded is-inverted is-outlined" id="clear-btn">clear</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        } else if (event.target.id === 'about-me') {
-            modalContent.innerHTML = `
-                <div class="columns" id="about-info">
-                    <div class="column">
-
-                        <h1 class="title has-text-primary">
-                            a little bit about me.
-                        </h1>
-                        <p class="subtitle is-light has-text-centered">
-                            I'm a thirty-something, life-long learner who's dabbled in a little bit of everything. I discovered my love for web-development in 2018 and I am so happy I did. I truly enjoy taking a client's vision and bringing it to life on the web. All of my work is fueled by coffee & music.
-                        </p>
-                        <p class="subtitle is-light has-text-centered">
-                            When I'm not glued to my keyboard, I enjoy traveling, playing volleyball & tennis, spending time with family & friends or watching a movie (horrors & thrillers are my jam). I'm a down-to-earth guy with a genuine desire to help others and coding happens to be my favorite means of doing so. 
-                        </p>
-                        <p class="subtitle is-light has-text-centered">
-                            My inbox is always open for job-inquiries, questions, comments or simple hellos. I love hearing from you all.
-                        </p>
-                        
-                    </div>
-                </div>
-            `;
-        } else if (event.target.id === 'recent-projects') {
-            displayProject(index);
-
+if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+        let empty = 0;
+        for(let i = 0; i < formField.length; i++) {
+            if (formField[i].value == '') {
+                formField[i].style.borderColor = '#b22734';
+                empty++;
+            } else {
+                formField[i].style.borderColor = '#00D1B2';
+            }
         }
 
-        modal.classList.add('is-active');
-
-    } else {
-        modal.classList.remove('is-active');
-    };
-
-    const submitBtn = document.getElementById('submit-btn');
-    const clearBtn = document.getElementById('clear-btn');
-    const formField = document.querySelectorAll('.form-field');
-    const email = document.getElementById('email');
-    const chat = document.querySelector('.chat');
-
-    if (submitBtn) {
-        submitBtn.addEventListener('click', () => {
-            let empty = 0;
-            for(let i = 0; i < formField.length; i++) {
-                if (formField[i].value == '') {
-                    formField[i].style.borderColor = '#b22734';
-                    empty++;
-                } else {
-                    formField[i].style.borderColor = '#00D1B2';
-                }
-            }
-
-            if (empty > 0) {
-                submitBtn.classList.remove('is-primary');
-                submitBtn.classList.add('is-danger');
-                chat.classList.remove('has-text-primary');
-                chat.classList.add('has-text-danger');
-                chat.innerText = 'fill out all fields.';
-            } else if (!emailIsValid(email.value)) {
-                email.style.borderColor = '#b22734';
-                submitBtn.classList.remove('is-primary');
-                submitBtn.classList.add('is-danger');
-                chat.classList.remove('has-text-primary');
-                chat.classList.add('has-text-danger');
-                chat.innerText = 'invalid email.';
-            } else {
-                submitBtn.classList.remove('is-danger');
-                submitBtn.classList.add('is-primary');
-                chat.classList.remove('has-text-danger');
-                chat.classList.add('has-text-primary');
-                chat.innerText = 'message sent.';
-                submitBtn.disabled = true;
-
-                for (let i = 0; i < formField.length; i++) {
-                    if (formField[i].value !== '') {
-                        formField[i].style.borderColor = '#00D1B2';
-                    }
-                }
-            }
-        });
-    };
-
-    if (clearBtn) {
-        clearBtn.addEventListener('click', () => {
-            for (let i = 0; i < formField.length; i++) {
-                formField[i].style.borderColor = '#F5F5F5';
-                formField[i].value = '';
-            }
+        if (empty > 0) {
+            submitBtn.classList.remove('is-primary');
+            submitBtn.classList.add('is-danger');
+            chat.classList.remove('has-text-primary');
+            chat.classList.add('has-text-danger');
+            chat.innerText = 'fill out all fields.';
+        } else if (!emailIsValid(email.value)) {
+            email.style.borderColor = '#b22734';
+            submitBtn.classList.remove('is-primary');
+            submitBtn.classList.add('is-danger');
+            chat.classList.remove('has-text-primary');
+            chat.classList.add('has-text-danger');
+            chat.innerText = 'invalid email.';
+        } else {
             submitBtn.classList.remove('is-danger');
             submitBtn.classList.add('is-primary');
             chat.classList.remove('has-text-danger');
             chat.classList.add('has-text-primary');
-            chat.innerText = "let's chat.";
-            submitBtn.disabled = false;
-        });
-    };
-});
+            chat.innerText = 'message sent.';
+            submitBtn.disabled = true;
 
-modalContent.addEventListener('click', (event) => {
-    if (event.target.id === 'left' || event.target.id === 'back') {
-        if (index !== 0) {
-            index--;
-            displayProject(index);
-        } else {
-            index = projects.length - 1;
-            displayProject(index);
+            for (let i = 0; i < formField.length; i++) {
+                if (formField[i].value !== '') {
+                    formField[i].style.borderColor = '#00D1B2';
+                }
+            }
         }
-    } else if (event.target.id === 'right' || event.target.id === 'forward') {
-        if (index !== projects.length - 1) {
-            index++;
-            displayProject(index);
-        } else {
-            index = 0;
-            displayProject(index);
+    });
+};
+
+if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+        for (let i = 0; i < formField.length; i++) {
+            formField[i].style.borderColor = '#F5F5F5';
+            formField[i].value = '';
         }
+        submitBtn.classList.remove('is-danger');
+        submitBtn.classList.add('is-primary');
+        chat.classList.remove('has-text-danger');
+        chat.classList.add('has-text-primary');
+        chat.innerText = "let's chat.";
+        submitBtn.disabled = false;
+    });
+};
+
+
+
+nav.addEventListener('click', (event) => {
+    if(event.target.id == 'recent-projects') {
+        document.location.href = 'projects.html';
+        index = 0;
+        showProject.innerHTML = `
+        <p class="subtitle is-light project-title has-text-centered">
+            ${projects[index].title}
+        </p>
+        <image class="project-img" src="${projects[index].img}" alt="project preview"></image>
+        <p class="is-light has-text-centered project-info">
+            ${projects[index].about}
+        </p>
+        <div class="skills-list">
+            <p>skills used: </p>
+            ${projects[index].skills}
+        </div>
+        <div class="project-links has-text-centered">
+            <a href="${projects[index].link}" target=”_blank”>visit site</a>
+            <a href="${projects[index].files}" target=”_blank”>source code</a>
+        </div>
+        <div class="buttons is-grouped project-btns">
+            <button class="button is-primary is-rounded is-outlined" id="left">
+                <span class="back" id="back">&lt;</span>
+            </button>
+            <button button class = "button is-primary is-rounded is-outlined" id="right">
+                <span class="forward" id="forward">&gt;</span>
+            </button>
+        </div>          
+    `;
     }
-});
 
-modalClose.addEventListener('click', () => {
-    modal.classList.remove('is-active');
-    index = 0;
+// if (event.target.id === 'left' || event.target.id === 'back') {
+//     if (index !== 0) {
+//         index--;
+//         displayProject(index);
+//     } else {
+//         index = projects.length - 1;
+//         displayProject(index);
+//     }
+// } else if (event.target.id === 'right' || event.target.id === 'forward') {
+//     if (index !== projects.length - 1) {
+//         index++;
+//         displayProject(index);
+//     } else {
+//         index = 0;
+//         displayProject(index);
+//     }
+// }
 });
 
 resume.addEventListener('click', () => {

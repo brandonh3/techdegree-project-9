@@ -2,35 +2,35 @@
 //       Button Styles
 // ===============================
 
-.buttons {
-    padding-top: 50px;
-}
+// .buttons {
+//     padding-top: 50px;
+// }
 
 .buttons button,
 .project-btns button {
     font-family: $font-family-primary;
     border: 3px solid $primary-color;
     transition: all 0.75s ease-in-out;
-
-    &.is-fullwidth {
-        display: block;
-    }
 }
 
 .nav {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    margin-top: 2rem;
 
     & button {
         padding: 1.4rem;
         font-size: 1.4rem;
     }
+
+    @include mq('med') {
+        flex-direction: row;
+    }
 }
 
 .submit {
     padding-top: 0;
-    
+    padding-bottom: 2rem;
 
     & button {
         font-size: 1.4rem;

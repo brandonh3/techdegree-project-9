@@ -1,18 +1,9 @@
-.buttons {
-  padding-top: 50px;
-}
-
 .buttons button,
 .project-btns button {
   font-family: "Anton", sans-serif;
   border: 3px solid #00D1B2;
   -webkit-transition: all 0.75s ease-in-out;
   transition: all 0.75s ease-in-out;
-}
-
-.buttons button.is-fullwidth,
-.project-btns button.is-fullwidth {
-  display: block;
 }
 
 .nav {
@@ -23,7 +14,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .nav button {
@@ -31,8 +22,18 @@
   font-size: 1.4rem;
 }
 
+@media (min-width: 768px) {
+  .nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .submit {
   padding-top: 0;
+  padding-bottom: 2rem;
 }
 
 .submit button {
@@ -89,13 +90,19 @@ h1 {
   padding-bottom: 1.5rem;
 }
 
-.hidden {
-  display: none;
+.columns {
+  border-bottom: 3px solid #F5F5F5;
+}
+
+.info {
+  padding-bottom: 2rem;
 }
 
 .section {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 #wrapper {
@@ -128,7 +135,8 @@ h1 {
 }
 
 .field {
-  width: 80%;
+  width: 95%;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -185,22 +193,6 @@ h1 {
 
 .social a {
   color: #00D1B2;
-}
-
-.modal-background {
-  background-color: #363636;
-  opacity: 0.99;
-}
-
-.modal-content {
-  height: 100%;
-  padding: 2rem 0;
-}
-
-@media (min-width: 768px) {
-  .modal-content {
-    padding: 3rem 0;
-  }
 }
 
 .custom-icon {
