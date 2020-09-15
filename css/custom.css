@@ -91,7 +91,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 5vh;
 }
 
 h1 {
@@ -125,6 +124,7 @@ h1 {
   height: 9rem;
   width: 9rem;
   margin: 0 auto;
+  margin-top: 10vh;
   -webkit-transition: all 0.75s ease-in-out;
   transition: all 0.75s ease-in-out;
   border: 3px solid #00D1B2;
