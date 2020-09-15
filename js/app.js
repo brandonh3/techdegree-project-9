@@ -202,13 +202,38 @@ if (clearBtn) {
     });
 };
 
+// ===============================
+//       Site Navigation
+// ===============================
 
-if (projectsH1) {
-    index = 0;
+nav.addEventListener('click', (event) => {
+    if (event.target.id !== '' && event.target.id !== 'resume') {
+        if (event.target.id === 'say-hello') {
+            window.location.href='contact.html';
+        } else if (event.target.id === 'about-me') {
+            window.location.href = 'about.html';
+        } else if (event.target.id === 'recent-projects') {
+            window.location.href = 'projects.html';
+        } else if (event.target.id === 'home') {
+            window.location.href = 'index.html';
+        }
+    }
+});
+
+// ===============================
+//     Display First Project
+// ===============================
+
+if (projectsH1) { // checks h1 element for match to projects page h1
+    index = 0; // if matched, set index to 0 and display the first project
     displayProject(index);
 }
 
-if(showProject) {
+// ===============================
+//       Project List Nav
+// ===============================
+
+if (showProject) {
     showProject.addEventListener('click', (event) => {
         if (event.target.id === 'left' || event.target.id === 'back') {
             if (index !== 0) {
@@ -229,6 +254,10 @@ if(showProject) {
         }
     });
 };
+
+// ===============================
+//  Opens resume.pdf in a new tab
+// ===============================
 
 resume.addEventListener('click', () => {
     window.open('../images/resume.pdf');
